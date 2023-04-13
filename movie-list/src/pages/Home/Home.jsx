@@ -10,20 +10,34 @@ const Home = () => {
   //o carregamento do código é muito mais rápido do que,buscar os dados da internet e voltar
   //await serve para fazer para para pegar os dados antes de executar
   async function getMovies() {
-    const data = await MovieService.getMovies();
-    console.log(data);
+    const {
+      data : {results},
+    } = await MovieService.getMovies();
+    
+    setMovies(results);
   }
     // MovieService.getMovies()
 
     useEffect( () => {
       getMovies();
+    },[]);
 
-    });
+    useEffect( () => {
+  
+      console.log(movies);
+    },);
 
     // ess é pior const x = new MovieService()
     // x.getMovies()
   
-  return <section className="Home">{}</section>
-  
+  return (
+  <section className="Home">
+    {movies.map((movie)  => (
+    <div key={movie.id}>
+      <MovieCard />
+    </div> 
+    ))}
+    </section>
+  );
 };
 export default Home;
