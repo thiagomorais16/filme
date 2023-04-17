@@ -34,7 +34,7 @@ const MovieDetail = () => {
             <div className="MovieDetail__col">
               <div className="MovieDetail__details">
                 <div className="MovieDetail__detail">
-                  <span>Orçamento:</span> {movie.budget}
+                  <span>Budget:</span> {movie.budget}
                 </div>
               <div className="MovieDetail__detail">
                 <span>Idioma Original:</span>{movie.original_language}
