@@ -19,6 +19,6 @@ export class MovieService {
     }
 // static só pode ser chamado apenas no movie service precisa movieServi().
     static searchMovies(movie){
-        return axios(withBaseUrl("search/movie") + `&query =${movie}`);
+        return axios(withBaseUrl("search/movie") + `&query=${movie}`);
     }
 }
